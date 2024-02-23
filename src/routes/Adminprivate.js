@@ -81,8 +81,7 @@ function Adminprivate({ ...rest }) {
   //     }
   //   );
 
-  console.log(auth);
-  console.log(authSuper);
+
 
   if (loading) {
     return <h1>loading.....</h1>;

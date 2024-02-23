@@ -40,7 +40,7 @@ function SlugAndCategory() {
   const getCategory = (id) => {
     setidslug(id);
     axios
-      .get(`/api/super-admin/get-categoryrefslug/${id ? id : 1}`)
+      .get(`/api/super-admin/getCategoryBySlug/${id ? id : 1}`)
       .then((res) => {
         // console.log(res.data.categorylist);
         if (res.data.status === 200) {
@@ -56,7 +56,7 @@ function SlugAndCategory() {
   };
 
   const deletee = (id) => {
-    axios.delete(`/api/super-admin/deleteslug/${id}`).then((res) => {
+    axios.delete(`/api/super-admin/deleteSlug/${id}`).then((res) => {
       if (res.status === 200) {
         swal("Success", res.data.message, "success");
         alldata();
@@ -71,7 +71,7 @@ function SlugAndCategory() {
       name: categoryName,
     };
 
-    axios.post("/api/super-admin/store-category", data).then((res) => {
+    axios.post("/api/super-admin/addCategory", data).then((res) => {
       if (res.data.status === 200) {
         swal("Success", res.data.message, "success");
         setcategoryName("");
@@ -86,7 +86,7 @@ function SlugAndCategory() {
 
   const deleteCategory = (id) => {
 
-    axios.delete(`/api/super-admin/delete-category/${id}`).then((res) => {
+    axios.delete(`/api/super-admin/deleteCategory/${id}`).then((res) => {
       if (res.data.status === 200) {
         swal("Success", res.data.message, "success");
         getCategory(idslug)
@@ -105,7 +105,7 @@ function SlugAndCategory() {
     }
     console.log(data);
     axios
-      .put(`/api/super-admin/update-category/${idCategory}`, data)
+      .put(`/api/super-admin/updateCategory/${idCategory}`, data)
       .then((res) => {
         if (res.status === 200) {
           console.log(res);
@@ -122,7 +122,7 @@ function SlugAndCategory() {
   const openModal = (id) => {
     setidCategory(id)
     axios
-      .get(`/api/super-admin/edit-category/${id}`)
+      .get(`/api/super-admin/getOneCategory/${id}`)
       .then((res) => {
         if (res.status === 200) {
           setEditNameCat(res.data.category.name)

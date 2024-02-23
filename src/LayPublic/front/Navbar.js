@@ -40,7 +40,7 @@ const Navbar = () => {
           className="nalink text-light px-3 "
           onClick={hadleclick}
           to="/login"
-          style={{border:'2px solid #3e5c76', height:'30px', borderRadius:'5px'}}
+          style={{border:'2px solid #3e5c76', height:'30px', borderRadius:'5px', textDecoration:'none'}}
         >
             <div style={{fontWeight:'500',  color:'#3e5c76'}} >LOGIN</div>
         </NavLink>
@@ -48,7 +48,7 @@ const Navbar = () => {
           className="nalink text-light px-3 "
           onClick={hadleclick}
           to="/register"
-          style={{background:'#3e5c76', height:'30px', borderRadius:'5px', }}
+          style={{background:'#3e5c76', height:'30px', borderRadius:'5px', textDecoration:'none'}}
         >
             <div style={{fontWeight:'500',  color:'#fff'}} >Sing Up</div>
         </NavLink>
@@ -59,8 +59,8 @@ const Navbar = () => {
       <div className="d-flex align-items-center justify-content-center ">
         <button
           onClick={logoutt}
-          className="btn btn-danger d-flex align-items-center h-100 lout "
-          style={{ marginRight: "px" }}
+          className="btn btn-danger d-flex align-items-center "
+       
         >
           <div style={{fontWeight:'500'}} >LOGOUT</div>
         </button>
